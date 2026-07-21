@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.js';
 import stripeRoutes from './routes/stripe.js';
+import dataRoutes from './routes/data.js';
 
 dotenv.config();
 
@@ -29,7 +30,7 @@ app.use(express.json());
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/stripe', stripeRoutes);
-
+app.use('/api/data', dataRoutes);
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Railway Auth Server is running' });
