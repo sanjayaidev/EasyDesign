@@ -2,11 +2,11 @@
 # Dependencies
 node_modules/
 
-# Environment
-.env
-.env.local
-.env.*
-
 # Package lock files
 package-lock.json
+
+# Environment files
+.env
+.env.local
+*.env.*
 ```
