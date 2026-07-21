@@ -11,7 +11,17 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*', // Restrict this in production to your extension ID
+  origin: function (origin, callback) {
+    // Allow Chrome extensions, localhost, and your frontend
+    if (
+      !origin ||
+      origin.startsWith('chrome-extension://') ||
+      origin === process.env.FRONTEND_URL
+    ) {
+      return callback(null, true);
+    }
+    callback(null, true); // or false to block unknown origins
+  },
   credentials: true
 }));
 app.use(express.json());
