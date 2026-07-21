@@ -1,12 +1,1 @@
-```
-# Dependencies
-node_modules/
-
-# Package lock files
-package-lock.json
-
-# Environment files
-.env
-.env.local
-*.env.*
-```
+(server-db.js is a source file, so no ignores needed)
