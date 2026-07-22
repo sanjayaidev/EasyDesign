@@ -1,5 +1,6 @@
-const fs = require('fs');
-const { Pool } = require('pg');
+import fs from 'fs';
+import pg from 'pg';
+const { Pool } = pg;
 
 // Railway automatically injects DATABASE_URL
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
